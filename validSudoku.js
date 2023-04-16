@@ -2,7 +2,6 @@ var isValidSudoku = function (board) {
     for (let i = 0; i < 9; i++) {
       let row = new Set();
       let column = new Set();
-      let box = new Set();
   
       for (let j = 0; j < 9; j++) {
         // Check for duplicates in rows
