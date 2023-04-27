@@ -29,6 +29,26 @@ var searchMatrix = function(matrix, target) {
         if (targetRow === -1){
             return false;
         }
-        
+
         return binarySearch(matrix[targetRow], target, 0, numCols - 1);
 };
+
+function binarySearch(nums, target, start, end) {
+    if (start > end) {
+        return false;
+    }
+
+    const middle = Math.floor((start + end) / 2);
+
+    if (nums[middle] === target) {
+        return true;
+    }
+
+    if (nums[middle] > target) {
+        return binarySearch(nums, target, start, middle - 1);
+    }
+
+    if (nums[middle] < target) {
+        return binarySearch(nums, target, middle + 1, end);
+    }
+}
